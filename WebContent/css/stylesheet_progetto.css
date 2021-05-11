@@ -1,0 +1,41 @@
+body {
+    background-color:#003399;
+}
+
+.op { background-color:hsla(0,0%,100%,.1)!important; }
+
+.navButtons {
+	background-color: hsla(0,0%,100%,.0);
+    border-radius: .29rem!important;
+	border:0px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: 'Heebo', sans-serif;
+    font-size:16px;
+    font-weight: 700!important;
+	padding:12px 26px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #000000;
+    
+}
+.navButtons:hover {
+	background-color:hsla(0,0%,100%,.1);
+}
+.navButtons:active {
+	position:relative;
+	top:1px;
+}
+.navButtons:focus {
+  outline: 0;
+  border: none;
+}
+
+.user_icon {
+    width: 40px;
+    height: 40px;
+}
+
+.container_row{
+    display: grid;
+}
