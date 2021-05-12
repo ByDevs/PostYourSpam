@@ -39,3 +39,26 @@ body {
 .container_row{
     display: grid;
 }
+
+.visual_data_box{
+	background-color: #e7e7e7;
+	border-radius: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	margin-left: 50px;
+	min-height: 5px;
+}
+
+section {
+	width: 100%;
+	position: relative;
+	padding: 50px;
+}
+
+.counter_one{
+	width: max-content;
+	height: max-content;
+	float: left;
+	margin: 20px;
+}
