@@ -11,9 +11,9 @@ body {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family: 'Heebo', sans-serif;
+	font-family: 'Roboto', sans-serif;
     font-size:16px;
-    font-weight: 700!important;
+    font-weight: 500!important;
 	padding:12px 26px;
 	text-decoration:none;
     text-shadow:0px 1px 0px #000000;
@@ -40,25 +40,54 @@ body {
     display: grid;
 }
 
-.visual_data_box{
+
+section {
+	width: 100%;
+	position: relative;
+	padding: 10%;
+}
+
+.counter_one_box{
+	width: fit-content;
+	height: fit-content;
+	float: left;
+	width: max(400px,35%);
+	margin-right: 5%;
+}
+
+.counter_one {
+	vertical-align: middle; 
+	color: #e7e7e7; 
+	float: left;
+	width: 100%;
+}
+
+.counter_text {
+	font-family: 'Roboto', sans-serif;
+	font-size: calc(30px + 0.7vw );
+	font-weight: bold;
+	color:#e7e7e7;
+}
+
+.normal_text {
+	font-family: 'Roboto', sans-serif;
+	color:#e7e7e7;
+	font-size: calc(18px + 0.5vw );
+	font-weight: lighter;
+}
+
+.counter_data_box{
 	background-color: #e7e7e7;
 	border-radius: 25px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	text-align: center;
-	margin-left: 50px;
-	min-height: 5px;
-}
-
-section {
 	width: 100%;
-	position: relative;
-	padding: 50px;
+	height: 150px;
+	transition: 0.5s;
 }
 
-.counter_one{
-	width: max-content;
-	height: max-content;
-	float: left;
-	margin: 20px;
+.counter_data_box:hover {
+	background-color: #ffffff;
+	border-radius: 60px;
 }
