@@ -1,0 +1,25 @@
+
+.page_box {
+	background-color: #e7e7e7;
+	border-radius: 20px;
+	width: 100%;
+	height: fit-content;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.submit_wrapper {
+
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+
+}
+
+hr.rounded {
+	border-top: 8px solid #bbb;
+	border-radius: 5px;
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

@@ -1,0 +1,52 @@
+.counter_one_box{
+	width: fit-content;
+	height: fit-content;
+	float: left;
+	width: max(400px,35%);
+	margin-right: 5%;
+}
+
+.counter_one {
+	vertical-align: middle; 
+	color: #e7e7e7; 
+	float: left;
+	width: 100%;
+}
+
+.counter_text {
+	font-family: 'Roboto', sans-serif;
+	font-size: calc(30px + 0.7vw );
+	font-weight: bold;
+	color:#e7e7e7;
+}
+
+.counter_data_box{
+	background-color: #e7e7e7;
+	border-radius: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	width: 100%;
+	height: 150px;
+	transition: 0.5s;
+}
+
+.counter_data_box:hover {
+	background-color: #ffffff;
+	border-radius: 60px;
+}
+
+.counter_two{
+	vertical-align: middle; 
+	color: #e7e7e7; 
+	float: right;
+	width: 100%;
+}
+
+.counter_two_box{
+	width: fit-content;
+	height: fit-content;
+	float: right;
+	width: max(400px,35%);
+	margin-right: 5%;
+}
