@@ -92,7 +92,20 @@ section {
 	border-radius: 60px;
 }
 
+.counter_two{
+	vertical-align: middle; 
+	color: #e7e7e7; 
+	float: right;
+	width: 100%;
+}
 
+.counter_two_box{
+	width: fit-content;
+	height: fit-content;
+	float: right;
+	width: max(400px,35%);
+	margin-right: 5%;
+}
 
 
 
