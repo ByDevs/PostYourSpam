@@ -5,7 +5,7 @@
     
     <link rel="stylesheet" href="css/stylesheet_progetto.css">
     <link rel="stylesheet" href="css/stylesheet_progetto_home.css">
-    
+    <link rel="stylesheet" href="css/stylesheet_progetto_login_popup.css">
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     
@@ -13,26 +13,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,100&display=swap" rel="stylesheet">
     
     
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script/login_popup.js"></script>
 </head>
 
 <body>
+    <div class="blur_container" id="blur">
     <nav class="navbar navbar-expand-lg navbar-light bg-light op">
         <img class="navbar-brand" src="images/page-logo.png" width="55px" height="55px">
 
-        <div class="d-flex order-lg-1 ml-auto pr-2">
-            <div style="display: inline-block; padding-right:10px; vertical-align:middle;">
-                <div>
-                    <img src="images/user_icon.png" width="22" height="22">
-                    <a style="color:#ffffff">DrTranzoc</a>
-                </div>
-                <div >
-                    <img src="images/spam-logo.png" width="22" height="22">
-                    <a style="color:#ffffff" href="#">50.32</a>
-                </div>
-            </div>
+        <div class="d-flex order-lg-1 ml-auto pr-2" id="mini_user_stats">
+            <button class="btn btn-primary" onclick="togglePopup()">Login</button>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -270,7 +263,27 @@
         <p class="copyright">Alessio Tranzocchi&emsp;&emsp;&emsp;&emsp;Matteo Catalano</p>
     </footer>
 </div>
+</div>
 
+<div id="popup">
+    <h2 style="font-family: 'Roboto', sans-serif; font-size: calc(20px + 1vw ); font-weight: bold; color:#1d1d1d">Login</h2>
+    <div>
+        <form action="">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" required>
+            </div>
+            <div style="float: right">
+                <a class="btn btn-primary" href="#" onclick="togglePopup()">Annulla</a>
+                <button type="submit" class="btn btn-primary" onclick="login()">Accedi</button>
+            </div>         
+        </form>
+    </div> 
+</div>
 
 
 </body>
