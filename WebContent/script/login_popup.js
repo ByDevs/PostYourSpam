@@ -31,15 +31,36 @@ function pressLogin() {
     var username = "DrTranzoc";
     var balance = "50.32";
     var substitute_div = " <div style='display: inline-block; padding-right:10px; vertical-align:middle;'> \
-        <div> \
-        <img src='images/user_icon.png' width='22' height='22'> \
-        <a style='color:#ffffff'>" + username +"</a> \
-        </div> \
-        <div> \
-        <img src='images/spam-logo.png' width='22' height='22'> \
-        <a style='color:#ffffff' href='#'>" + balance + "</a> \
-        </div> \
-        </div> \
+    <div>\
+    <img src='images/user_icon.png' width='22' height='22'>\
+    <li class='nav-item dropdown'>\
+        <a class='nav-link dropdown-toggle' style='color:#ffffff' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>" + username +"</a>\
+        <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>\
+            <a class='dropdown-item' href='#'>Profilo</a>\
+            <a class='dropdown-item' href='#'>Logout</a>\
+        </div>\
+    </li> </div> \
+<div>\
+    <img src='images/spam-logo.png' width='22' height='22'>\
+    <a style='color:#ffffff' href='#'>" + balance + "</a>\
+</div>\
+</div>\
     ";
     $('#mini_user_stats').append(substitute_div);
 }
+/*
+<div>\
+    <img src='images/user_icon.png' width='22' height='22'>\
+    <li class='nav-item dropdown'>\
+        <a class='nav-link dropdown-toggle' style='color:#ffffff'>" + username +"</a>\
+        <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>\
+            <a class='dropdown-item' href='#'>Profilo</a>\
+            <a class='dropdown-item' href='#'>Logout</a>\
+        </div>\
+    </li>\  
+</div>\
+<div>\
+    <img src='images/spam-logo.png' width='22' height='22'>\
+    <a style='color:#ffffff' href='#'>" + balance + "</a>\
+</div>\
+</div>\*/
