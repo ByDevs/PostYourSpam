@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 /**
  * This class execute DML and DQL query to the local server "DBNAME" in order to save / retrieve user or save / check synonyms
- * @author AlessioTranzocchi
+ * @author Alessio Tranzocchi & Matteo Catalano
  *
  */
 public class DBManager {
