@@ -25,7 +25,7 @@
         <img class="navbar-brand" src="images/page-logo.png" width="55px" height="55px">
 
         <div class="d-flex order-lg-1 ml-auto pr-2" id="mini_user_stats">
-            <button class="btn btn-primary" onclick="togglePopup()">Login</button>
+            <button class="btn btn-primary" onclick="togglePopup()" id="login_button">Login</button>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -279,7 +279,7 @@
             </div>
             <div style="float: right">
                 <a class="btn btn-primary" href="#" onclick="togglePopup()">Annulla</a>
-                <button type="submit" class="btn btn-primary" onclick="login()">Accedi</button>
+                <button type="submit" class="btn btn-primary" onclick="pressLogin()">Accedi</button>
             </div>         
         </form>
     </div> 

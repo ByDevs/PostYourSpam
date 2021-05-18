@@ -25,22 +25,21 @@ function enableScroll() {
     document.body.style.overflow = null;
 }
 
-function login() {
+function pressLogin() {
+    togglePopup();
+    $('#mini_user_stats').empty();
     var username = "DrTranzoc";
     var balance = "50.32";
-    var substitute_div = " <div style='display: inline-block; padding-right:10px; vertical-align:middle;'>\
-        <div>\
-        <img src='images/user_icon.png' width='22' height='22'>\
-        <a style='color:#ffffff'>" + username +"</a>\
-        </div>\
-        <div >\
-        <img src='images/spam-logo.png' width='22' height='22'>\
-        <a style='color:#ffffff' href='#'>" + balance + "</a>\
-        </div>\
-        </div>\
+    var substitute_div = " <div style='display: inline-block; padding-right:10px; vertical-align:middle;'> \
+        <div> \
+        <img src='images/user_icon.png' width='22' height='22'> \
+        <a style='color:#ffffff'>" + username +"</a> \
+        </div> \
+        <div> \
+        <img src='images/spam-logo.png' width='22' height='22'> \
+        <a style='color:#ffffff' href='#'>" + balance + "</a> \
+        </div> \
+        </div> \
     ";
-
-    $('#mini_user_stats').empty();
     $('#mini_user_stats').append(substitute_div);
-    togglePopup();
 }
