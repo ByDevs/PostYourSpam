@@ -31,15 +31,18 @@
     font-family: 'Roboto', sans-serif;
     font-size: calc(9px + 0.5vw );
 	font-weight:900;
+    position: relative;
+    margin-left: 3%;
 }
 
 .subtitle_post {
     font-family: 'Roboto', sans-serif;
-    font-size: calc(5px + 0.5vw );
+    font-size: calc(7px + 0.5vw );
+    position: relative;
+    margin-left: 3%;
 }
 
 .space_title{
-    padding-left: 2%;
     padding-top: 1%;
     padding-bottom: 1%;
 
@@ -53,6 +56,13 @@
     display: block;
 }
 
-.counter{
-    
+.numbers_post {
+    /*font-family: 'Roboto', sans-serif;
+    font-size: calc(15px + 0.5vw );
+    line-height: 90px;
+    text-align: center;*/
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(15px + 0.5vw );
+    margin: auto;
+    text-align: center;
 }
