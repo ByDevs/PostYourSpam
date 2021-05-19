@@ -56,6 +56,8 @@
 
     <div class="parallax-container" id="px-container">
         <img class="parallax-img" src="images/bg-layer-1.png" id="l1">
+        <img class="parallax-img" src="images/bg-layer-cloud.png" id="lcloud">
+        <img class="parallax-img" src="images/bg-layer-welcome.png" id="lwel">
         <img class="parallax-img" src="images/bg-layer-2.png" id="l2">
         <img class="parallax-img" src="images/bg-layer-3.png" id="l3">
         <img class="parallax-img" src="images/bg-layer-4.png" id="l4">
@@ -64,6 +66,8 @@
     
     <script type="text/javascript">
         let l1 = document.getElementById("l1");
+        let lc = document.getElementById("lcloud");
+        let lw = document.getElementById("lwel");
         let l2 = document.getElementById("l2");
         let l3 = document.getElementById("l3");
         let l4 = document.getElementById("l4");
@@ -81,6 +85,9 @@
             l2.style.top = (value * 0.4) + minTop + 'px';
             l2.style.left = value * 0.25 + 'px';
             
+            lc.style.top = (-value * 0.2) + minTop + 'px';
+            lw.style.top = (value * 0.3) + minTop + 'px';
+
             l4.style.top = (value * 0.13) + minTop + 'px';
             l5.style.top = (value * 0.08) + minTop + 'px';
 
