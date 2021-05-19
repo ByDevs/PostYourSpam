@@ -21,6 +21,7 @@
 
 <body>
     <div class="blur_container" id="blur">
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light op">
         <img class="navbar-brand" src="images/page-logo.png" width="55px" height="55px">
 
@@ -52,6 +53,46 @@
             </ul>
         </div>
     </nav>
+
+    <div class="parallax-container" id="px-container">
+        <img class="parallax-img" src="images/bg-layer-1.png" id="l1">
+        <img class="parallax-img" src="images/bg-layer-2.png" id="l2">
+        <img class="parallax-img" src="images/bg-layer-3.png" id="l3">
+        <img class="parallax-img" src="images/bg-layer-4.png" id="l4">
+        <img class="parallax-img" src="images/bg-layer-5.png" id="l5">
+    </div>
+    
+    <script type="text/javascript">
+        let l1 = document.getElementById("l1");
+        let l2 = document.getElementById("l2");
+        let l3 = document.getElementById("l3");
+        let l4 = document.getElementById("l4");
+        let l5 = document.getElementById("l5");
+
+        let divElm = document.getElementById("px-container");
+        divElm.style.maxHeight = window.outerWidth * 0.6 + 'px';
+
+        let minTop = 50;
+
+        window.addEventListener('scroll', function() {
+
+            let value = window.scrollY;
+
+            l2.style.top = (value * 0.4) + minTop + 'px';
+            l2.style.left = value * 0.25 + 'px';
+            
+            l4.style.top = (value * 0.13) + minTop + 'px';
+            l5.style.top = (value * 0.08) + minTop + 'px';
+
+        });
+
+        window.addEventListener('resize', function() {
+                
+                divElm.style.maxHeight = window.outerWidth * 0.6 + 'px';
+
+        })
+    </script>
+    
     
     <section>
         <div class="counter_one_box">

@@ -50,3 +50,36 @@
 	width: max(400px,35%);
 	margin-right: 5%;
 }
+
+
+
+
+/* PARALLAX EFFECT */
+
+div.parallax-container {
+	
+	width: 90%;
+	height: 100vh;
+	position: relative;
+	overflow : hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}
+
+.parallax-img{
+
+	position: absolute;
+	top:50px;
+	left: 0;
+	width: 100%;
+	height: auto;
+	min-width: 400px;
+
+	object-fit: cover;
+	pointer-events: none;
+
+	margin: auto;
+}
+
