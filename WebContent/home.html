@@ -2,13 +2,12 @@
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
     <link rel="stylesheet" href="css/stylesheet_progetto.css">
     <link rel="stylesheet" href="css/stylesheet_progetto_home.css">
     <link rel="stylesheet" href="css/stylesheet_progetto_login_popup.css">
     
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,100&display=swap" rel="stylesheet">
     
@@ -16,9 +15,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="script/login_popup.js"></script>
+    
+    
+    <script type="text/javascript" src="script/serverRequests.js"></script>
+    <script type="text/javascript" src="script/login_popup.js" onload="showUserStats()"></script>
+    <script type="text/javascript" src="script/parallax_eff.js"></script>
 </head>
-
 <body>
     <div class="blur_container" id="blur">
 
@@ -63,43 +65,6 @@
         <img class="parallax-img" src="images/bg-layer-4.png" id="l4">
         <img class="parallax-img" src="images/bg-layer-5.png" id="l5">
     </div>
-    
-    <script type="text/javascript">
-        let l1 = document.getElementById("l1");
-        let lc = document.getElementById("lcloud");
-        let lw = document.getElementById("lwel");
-        let l2 = document.getElementById("l2");
-        let l3 = document.getElementById("l3");
-        let l4 = document.getElementById("l4");
-        let l5 = document.getElementById("l5");
-
-        let divElm = document.getElementById("px-container");
-        divElm.style.maxHeight = window.outerWidth * 0.6 + 'px';
-
-        let minTop = 50;
-
-        window.addEventListener('scroll', function() {
-
-            let value = window.scrollY;
-
-            l2.style.top = (value * 0.4) + minTop + 'px';
-            l2.style.left = value * 0.25 + 'px';
-            
-            lc.style.top = (-value * 0.2) + minTop + 'px';
-            lw.style.top = (value * 0.3) + minTop + 'px';
-
-            l4.style.top = (value * 0.13) + minTop + 'px';
-            l5.style.top = (value * 0.08) + minTop + 'px';
-
-        });
-
-        window.addEventListener('resize', function() {
-                
-                divElm.style.maxHeight = window.outerWidth * 0.6 + 'px';
-
-        })
-    </script>
-    
     
     <section>
         <div class="counter_one_box">

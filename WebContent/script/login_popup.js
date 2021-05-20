@@ -25,27 +25,102 @@ function enableScroll() {
     document.body.style.overflow = null;
 }
 
+
+
+
+
+
+
+
+
+
+//#####LOGIN REQUEST#####
 function pressLogin() {
+
+    var email = document.getElementById("login-email").value;
+    var password = document.getElementById("login-password").value;
+
+    console.log(email + " " + password);
+
+    var params = new reqParams("");
+    params.addParams("email",email).addParams("password",password);
+
+    console.log(loginRequest("login.jsp", params.getParams));
     togglePopup();
-    $('#mini_user_stats').empty();
-    var username = "DrTranzoc";
-    var balance = "50.32";
-    var substitute_div = 
-    "<div style='display: inline-block; padding-right:25px; vertical-align:middle;'> \
-        <div >\
-            <div class='dropdown'>\
-                <img src='images/user_icon.png' width='22' height='22'>\
-                <a href='#' class='dropdown-toggle' style='color:#ffffff' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>" + username +"</a>\
-                <div style='min-width: 50px !important' class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>\
-                    <a class='dropdown-item' href='#'>Profilo</a>\
-                    <a class='dropdown-item' href='#'>Logout</a>\
-                </div>\
-            </div> \
-        </div>\
-        <div>\
-            <img src='images/spam-logo.png' width='22' height='22'>\
-            <a style='color:#ffffff' href='#'>" + balance + "</a>\
-        </div>\
-    </div>";
-    $('#mini_user_stats').append(substitute_div);
+}
+
+function loginRequest(url , params) {
+    var http = sendRequest(url);
+    
+    http.onreadystatechange = function() {
+        if(http.readyState == 4 && http.status == 200) {
+            if(http.responseText == "true"){
+                showUserStats();
+            }
+            else if(http.responseText == "false"){
+                alert("I dati non sono corretti");
+            }
+        }
+    }
+    http.send(params);
+}
+
+function logout() {
+    var http = sendRequest("logout.jsp");
+    
+    http.onreadystatechange = function() {
+        if(http.readyState == 4 && http.status == 200) {
+            showUserStats();
+        }
+    }
+    http.send(null);
+}
+
+
+/*Check if the user is logged in the session, and updates the navbar, if not reload the original buttons*/
+function showUserStats(){
+
+    var http = sendRequest("getusrstat.jsp");
+    
+    http.onreadystatechange = function() {
+        if(http.readyState == 4 && http.status == 200) {
+            if(http.responseText == "notLogged"){
+                $('#mini_user_stats').empty();
+
+                var original_div = 
+                    "<button class='btn btn-primary' onclick='togglePopup()' id='login_button'>Login</button> \
+                    <a  style='margin-left: 10px;' class='btn btn-primary' href='signup.html' id='login_button'>Registrati</a>'";
+                
+                $('#mini_user_stats').append(original_div);
+            }
+            else
+            {
+                res = JSON.parse(http.responseText);
+
+                username = res["username"];
+                balance = res["balance"];
+                
+                $('#mini_user_stats').empty();
+                var substitute_div = 
+                "<div style='display: inline-block; padding-right:25px; vertical-align:middle;'> \
+	                <div >\
+	                    <div class='dropdown'>\
+	                        <img src='images/user_icon.png' width='22' height='22'>\
+	                        <a href='#' class='dropdown-toggle' style='color:#ffffff' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>" + username +"</a>\
+	                        <div style='min-width: 50px !important' class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>\
+	                            <a class='dropdown-item' href='#'>Profilo</a>\
+	                            <a class='dropdown-item' onclick='logout()' href='#'>Logout</a>\
+	                        </div>\
+	                    </div> \
+	                </div>\
+	                    <div>\
+	                        <img src='images/spam-logo.png' width='22' height='22'>\
+	                        <a style='color:#ffffff' href='#'>" + balance + "</a>\
+	                    </div>\
+	                </div>";
+                $('#mini_user_stats').append(substitute_div);
+            }
+        }
+    }
+    http.send(null);
 }
