@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/stylesheet_progetto.css">
+    <link rel="stylesheet" href="css/stylesheet_progetto_login_popup.css">
+    <link rel="stylesheet" href="css/stylesheet_progetto_post.css">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,100&display=swap" rel="stylesheet">
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script/login_popup.js"></script>
+    <script type="text/javascript" src="script/resize_post.js"></script>
+</head>
+
+<body>
+    <div class="blur_container" id="blur">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light op">
+        <img class="navbar-brand" src="images/page-logo.png" width="55px" height="55px">
+
+        <div class="d-flex order-lg-1 ml-auto pr-2" id="mini_user_stats">
+            <button class="btn btn-primary" onclick="togglePopup()" id="login_button">Login</button>
+            <a  style="margin-left: 10px;" class="btn btn-primary" href="signup.html" id="login_button">Registrati</a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <button href="#" class="navButtons nav-item">SPAM</button>
+                </li>
+                <li class="nav-item active">
+                    <button href="#" class="navButtons nav-item">CREA SPAM</button>
+                </li>
+                
+                <li class="nav-item active">
+                    <button href="#" class="navButtons nav-item">FREE</button>
+                </li>
+                
+                <li class="nav-item active">
+                    <button href="#" class="navButtons nav-item">INFO</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="post_box">
+            <div class="container">
+                <div class="row align-items-start">
+                    <div id="first_column" class="col-xs">
+                        <img src="images/user_icon.png" width="40" height="40">
+                    </div>
+                    <div class="col">
+                        <p class="title_text">Titolo Mega Stupendo</p>
+                        <div style="display: inline-block;">
+                            <span class="date_post"> 22/11/63 12:00</span> 
+                            <span class="nickname_post">DrTranzoc</span>
+                            <span id="resize_value_post"></span>
+                        </div>
+                        <hr>
+                        <div class="subtitle_post">
+                            culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo 
+                        </div>
+                        <hr>
+                        <div style="margin-top: 1%">
+                            <p class="text_box">testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino testo culo ciao cagnolino </p>
+                        </div>
+                        <div style="width: 100%; text-align: center;">
+                            <button class="link_box" onclick="location.href='https://google.com';"> visita il sito web</button>
+                        </div>
+                        
+                    </div>
+                    <div id="third_column" class="col-xs">
+                        <i class="bi bi-eye"></i> <span class="value_post">250</span>
+                        <i class="bi bi-currency-exchange lmarg"></i> <span class="value_post">5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<div class="footer-basic">
+    <footer>
+        <div class="social">
+            <a href="https://instagram.com"><i class="bi bi-instagram"></i></a>
+            <a href="https://github.com"><i class="bi bi-github"></i></a>
+            <a href="https://twitter.com"><i class="bi bi-twitter"></i></a>
+            <a href="https://facebook.com"><i class="bi bi-facebook"></i></a>
+        </div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Home</a></li>
+            <li class="list-inline-item"><a href="#">Info</a></li>
+            <li class="list-inline-item"><a href="#">FAQ</a></li>
+        </ul>
+        <p class="copyright">Alessio Tranzocchi&emsp;&emsp;&emsp;&emsp;Matteo Catalano</p>
+    </footer>
+</div>
+</div>
+
+<div id="popup">
+    <h2 style="font-family: 'Roboto', sans-serif; font-size: calc(20px + 1vw ); font-weight: bold; color:#1d1d1d">Login</h2>
+    <div>
+        <form action="" onsubmit="pressLogin(); return false">
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" class="form-control" id="login-email" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" class="form-control" id="login-password" required>
+            </div>
+            <div style="float: right">
+                <button class="btn btn-primary" href="#" onclick="togglePopup(); return false;">Annulla</button>
+                <button type="submit" class="btn btn-primary">Accedi</button>
+            </div>         
+        </form>
+    </div> 
+</div>
+</body>
+</html>
