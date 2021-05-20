@@ -19,6 +19,7 @@
 
 .header_div {
     text-align: center;
+    font-weight: bold;
 }
 
 .post_box {
@@ -45,11 +46,6 @@
 .space_title{
     padding-top: 1%;
     padding-bottom: 1%;
-
-    /*display:block;
-    justify-content: center;
-    align-items: center;*/
-    
 }
 
 .hidden_resize {
@@ -57,12 +53,28 @@
 }
 
 .numbers_post {
-    /*font-family: 'Roboto', sans-serif;
-    font-size: calc(15px + 0.5vw );
-    line-height: 90px;
-    text-align: center;*/
     font-family: 'Roboto', sans-serif;
     font-size: calc(15px + 0.5vw );
     margin: auto;
     text-align: center;
 }
+
+.subtitle_number_post {
+    font-weight: lighter;
+    font-size: calc(5px + 0.5vw );
+}
+
+.author_post {
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(8px + 0.5vw );
+    margin: auto;
+    text-align: center;
+}
+
+.date_post {
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(5px + 0.5vw );
+    
+    margin-top: 2%;
+}
+
