@@ -1,0 +1,78 @@
+.post_box {
+    background-color: #e7e7e7;
+    border-radius: 20px;
+	width: 100%;
+	height: fit-content;
+	padding-top: 30px;
+	padding-bottom: 30px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.container{
+    max-width: 100%;
+    min-height: 300px;
+}
+
+.title_text {
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(15px + 1vw );
+    font-weight: bold;
+    margin-bottom: 0.5%;
+}
+
+.date_post {
+    white-space: nowrap;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(10px + 0.5vw );
+    font-weight: lighter;
+    margin-right: 10px;
+}
+
+.nickname_post {
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(10px + 0.5vw );
+    margin-right: 10px;
+}
+
+.subtitle_post{
+    background-color: #d2d2d2;
+    border-radius: 20px;
+    height: fit-content;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(12px + 0.2vw );
+    padding-left: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.text_box {
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(12px + 0.2vw );
+}
+
+.link_box {
+    background-color: #d2d2d2;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    padding: 5px 50px 5px 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(12px + 0.2vw );
+    transition: 0.5s;
+}
+
+.link_box:hover {
+    background-color: grey;
+
+}
+
+.value_post {
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(10px + 0.2vw );
+    margin-left: 3px;
+}
+
+.lmarg {
+    margin-left: 8px;
+}
