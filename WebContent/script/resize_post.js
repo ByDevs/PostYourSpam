@@ -1,6 +1,8 @@
+const percentage = 55;
+
 $(window).on('resize', function(){
     var win = $(this); //this = window
-    if (win.width() < 1000) {
+    if (win.width() < (screen.width * percentage) / 100) {
         if($("#first_column").css("display") == "block"){
             $("#first_column").css("display", "none");
             $("#third_column").children().appendTo("#resize_value_post");
@@ -23,7 +25,7 @@ $(window).on('resize', function(){
 });
 
 function resizeOnLoad(){
-    if (window.innerWidth < 1000) {
+    if (window.innerWidth < (screen.width * percentage) / 100) {
         $("#first_column").css("display", "none");
         $("#third_column").children().appendTo("#resize_value_post");
         $("#third_column").css("display", "none");

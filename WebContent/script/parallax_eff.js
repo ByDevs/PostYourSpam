@@ -35,7 +35,11 @@ function init(){
         })    
 
 }
-
+/*
 window.onload = function() {
     init();
 };
+*/
+function parallaxInit(){
+    init();
+}

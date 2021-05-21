@@ -1,3 +1,9 @@
+.title_box {
+    color: #e7e7e7;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(15px + 1.5vw );
+}
+
 .page_box{
     background-color: #e7e7e7;
     border-radius: 20px;
@@ -24,7 +30,7 @@
 
 .post_box {
     background-color: #d2d2d2;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-top: 2%;
 }
 

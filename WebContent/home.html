@@ -4,81 +4,44 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/stylesheet_progetto.css">
     <link rel="stylesheet" href="css/stylesheet_progetto_home.css">
-    <link rel="stylesheet" href="css/stylesheet_progetto_login_popup.css">
-    
-    
+    <link rel="stylesheet" href="css/stylesheet_progetto_login_popup.css"> 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,100&display=swap" rel="stylesheet">
-    
-    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,100&display=swap" rel="stylesheet">  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-    
+    <script type="text/javascript" src="script/load_body.js"></script>
     <script type="text/javascript" src="script/serverRequests.js"></script>
-    <script type="text/javascript" src="script/login_popup.js" onload="showUserStats()"></script>
+    <script type="text/javascript" src="script/login_popup.js"></script>
     <script type="text/javascript" src="script/parallax_eff.js"></script>
 </head>
-<body>
+<body onload="loadBody(); showUserStats(); parallaxInit();">
     <div class="blur_container" id="blur">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light op">
-        <img class="navbar-brand" src="images/page-logo.png" width="55px" height="55px">
-
-        <div class="d-flex order-lg-1 ml-auto pr-2" id="mini_user_stats">
-            <button class="btn btn-primary" onclick="togglePopup()" id="login_button">Login</button>
-            <a  style="margin-left: 10px;" class="btn btn-primary" href="signup.html" id="login_button">Registrati</a>
+        <div class="parallax-container" id="px-container">
+            <img class="parallax-img" src="images/bg-layer-1.png" id="l1">
+            <img class="parallax-img" src="images/bg-layer-cloud.png" id="lcloud">
+            <img class="parallax-img" src="images/bg-layer-welcome.png" id="lwel">
+            <img class="parallax-img" src="images/bg-layer-2.png" id="l2">
+            <img class="parallax-img" src="images/bg-layer-3.png" id="l3">
+            <img class="parallax-img" src="images/bg-layer-4.png" id="l4">
+            <img class="parallax-img" src="images/bg-layer-5.png" id="l5">
         </div>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <button href="#" class="navButtons nav-item">SPAM</button>
-                </li>
-                <li class="nav-item active">
-                    <button href="#" class="navButtons nav-item">CREA SPAM</button>
-                </li>
-                
-                <li class="nav-item active">
-                    <button href="#" class="navButtons nav-item">FREE</button>
-                </li>
-                
-                <li class="nav-item active">
-                    <button href="#" class="navButtons nav-item">INFO</button>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="parallax-container" id="px-container">
-        <img class="parallax-img" src="images/bg-layer-1.png" id="l1">
-        <img class="parallax-img" src="images/bg-layer-cloud.png" id="lcloud">
-        <img class="parallax-img" src="images/bg-layer-welcome.png" id="lwel">
-        <img class="parallax-img" src="images/bg-layer-2.png" id="l2">
-        <img class="parallax-img" src="images/bg-layer-3.png" id="l3">
-        <img class="parallax-img" src="images/bg-layer-4.png" id="l4">
-        <img class="parallax-img" src="images/bg-layer-5.png" id="l5">
-    </div>
     
-    <section>
-        <div class="counter_one_box">
-            <div class="counter_one">
-                <p class="counter_text"> Si sono registrati</p>
-                <div class="counter_data_box">
-                    <p style="margin: auto; font-size: calc(65px + 1vw); color:#000000">10000</p>
+        <section>
+            <div class="counter_one_box">
+                <div class="counter_one">
+                    <p class="counter_text"> Si sono registrati</p>
+                    <div class="counter_data_box">
+                        <p style="margin: auto; font-size: calc(65px + 1vw); color:#000000">10000</p>
+                    </div>
+                    <p style="text-align: right;" class="counter_text">utenti</p>
                 </div>
-                <p style="text-align: right;" class="counter_text">utenti</p>
             </div>
-        </div>
         
-        <div>
-            <p class="normal_text">-Quali sono gli attributi di un buon software?
+            <div>
+                <p class="normal_text">-Quali sono gli attributi di un buon software?
             Un buon software dovrebbe avere performance e funzionalità richieste dall’utente ed
             inoltre dovrebbe essere affidabile, utilizzabile e mantenibile.
             -Quali sono le attività fondamentali della software engineering?
@@ -127,23 +90,23 @@
             -Quando appropriato, bisogna riutilizzare un software già sviluppato piuttosto che rifarlo da 0.-Quali sono gli attributi di un buon software?
             Un buon software dovrebbe avere performance e funzionalità richieste dall’utente ed
             inoltre dovrebbe essere affidabile, utilizzabile e mantenibile.
-            </p>
-        </div>
-    </section>
-
-    <section>
-        <div class="counter_two_box">
-            <div class="counter_two">
-                <p class="counter_text"> Sono stati creati</p>
-                <div class="counter_data_box">
-                    <p style="margin: auto; font-size: calc(65px + 1vw); color:#000000">10000</p>
-                </div>
-                <p style="text-align: right;" class="counter_text">post</p>
+                </p>
             </div>
-        </div>
+        </section>
+
+        <section>
+            <div class="counter_two_box">
+                <div class="counter_two">
+                    <p class="counter_text"> Sono stati creati</p>
+                    <div class="counter_data_box">
+                        <p style="margin: auto; font-size: calc(65px + 1vw); color:#000000">10000</p>
+                    </div>
+                    <p style="text-align: right;" class="counter_text">post</p>
+                </div>
+            </div>
     
-        <div>
-            <p class="normal_text">testo testo testo testotesto testotesto testotesto testotesto testotesto testotesto testotesto testotesto testotesto testotesto testotesto testo Un buon software dovrebbe avere performance e funzionalità richieste dall’utente ed
+            <div>
+                <p class="normal_text">testo testo testo testotesto testotesto testotesto testotesto testotesto testotesto testotesto testotesto testotesto testotesto testotesto testo Un buon software dovrebbe avere performance e funzionalità richieste dall’utente ed
                 inoltre dovrebbe essere affidabile, utilizzabile e mantenibile.
                 -Quali sono le attività fondamentali della software engineering?
                 -Specifica: ingegneri e customer definiscono il software da produrre e i vincoli sulle
@@ -191,22 +154,22 @@
                 -Quando appropriato, bisogna riutilizzare un software già sviluppato piuttosto che rifarlo da 0.-Quali sono gli attributi di un buon software?
                 Un buon software dovrebbe avere performance e funzionalità richieste dall’utente ed
                 inoltre dovrebbe essere affidabile, utilizzabile e mantenibile.</p>
-        </div>
-    </section>
-
-    <section>
-        <div class="counter_one_box">
-            <div class="counter_one">
-                <p class="counter_text"> I nostri utenti hanno guadagnato</p>
-                <div class="counter_data_box">
-                    <p style="margin: auto; font-size: calc(65px + 1vw); color:#000000">10000</p>
                 </div>
-                <p style="text-align: right;" class="counter_text">SPAM</p>
+        </section>
+
+        <section>
+            <div class="counter_one_box">
+                <div class="counter_one">
+                    <p class="counter_text"> I nostri utenti hanno guadagnato</p>
+                    <div class="counter_data_box">
+                        <p style="margin: auto; font-size: calc(65px + 1vw); color:#000000">10000</p>
+                    </div>
+                    <p style="text-align: right;" class="counter_text">SPAM</p>
+                </div>
             </div>
-        </div>
         
-        <div>
-            <p class="normal_text">-Quali sono gli attributi di un buon software?
+            <div>
+                <p class="normal_text">-Quali sono gli attributi di un buon software?
             Un buon software dovrebbe avere performance e funzionalità richieste dall’utente ed
             inoltre dovrebbe essere affidabile, utilizzabile e mantenibile.
             -Quali sono le attività fondamentali della software engineering?
@@ -255,46 +218,13 @@
             -Quando appropriato, bisogna riutilizzare un software già sviluppato piuttosto che rifarlo da 0.-Quali sono gli attributi di un buon software?
             Un buon software dovrebbe avere performance e funzionalità richieste dall’utente ed
             inoltre dovrebbe essere affidabile, utilizzabile e mantenibile.
-            </p>
-        </div>
-    </section>
-
-<div class="footer-basic">
-    <footer>
-        <div class="social">
-            <a href="https://instagram.com"><i class="bi bi-instagram"></i></a>
-            <a href="https://github.com"><i class="bi bi-github"></i></a>
-            <a href="https://twitter.com"><i class="bi bi-twitter"></i></a>
-            <a href="https://facebook.com"><i class="bi bi-facebook"></i></a>
-        </div>
-        <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Home</a></li>
-            <li class="list-inline-item"><a href="#">Info</a></li>
-            <li class="list-inline-item"><a href="#">FAQ</a></li>
-        </ul>
-        <p class="copyright">Alessio Tranzocchi&emsp;&emsp;&emsp;&emsp;Matteo Catalano</p>
-    </footer>
-</div>
-</div>
-
-<div id="popup">
-    <h2 style="font-family: 'Roboto', sans-serif; font-size: calc(20px + 1vw ); font-weight: bold; color:#1d1d1d">Login</h2>
-    <div>
-        <form action="" onsubmit="pressLogin(); return false">
-            <div class="form-group">
-                <label for="login-email">Email</label>
-                <input type="email" class="form-control" id="login-email" required>
+                </p>
             </div>
-            <div class="form-group">
-                <label for="login-password">Password</label>
-                <input type="password" class="form-control" id="login-password" required>
-            </div>
-            <div style="float: right">
-                <button class="btn btn-primary" href="#" onclick="togglePopup(); return false;">Annulla</button>
-                <button type="submit" class="btn btn-primary">Accedi</button>
-            </div>         
-        </form>
-    </div> 
-</div>
+        </section>
+
+        <div class="footer-basic"></div>
+    </div>
+
+    <div id="popup"></div>
 </body>
 </html>
