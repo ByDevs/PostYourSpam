@@ -20,10 +20,9 @@ function toggleAnswerPopup(){
 }
 
 function disableScroll() {
-    document.body.style.overflow = 'hidden';
-    //document.querySelector('html').scrollTop = window.scrollY;
+    $('body').css("overflow","hidden");
 }
 
 function enableScroll() {
-    document.body.style.overflow = null;
+    $('body').css("overflow","initial");
 }

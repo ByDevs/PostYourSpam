@@ -53,8 +53,6 @@ public class DBManager {
 			Statement state = conn.createStatement();
 			//Execution of the query
 			result = state.executeQuery(qry);
-			//CLOSE THE STATE AND THE CONNECTION
-			conn.close();
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}

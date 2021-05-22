@@ -34,11 +34,10 @@ public class LoginServlet extends Servlet_Base {
 		
 		String query = "SELECT * FROM Utente u WHERE u.email = \""+email+"\" AND u.password = \""+password+"\"";
 		
-		System.out.println(query);
-		
 		try {
 			//Execute the query in order to find if there is any user that met the criteria
 			ResultSet rs = DBManager.exDQLQuery(query);
+			
 			//Check if there is a result
 			if(rs != null && rs.next()) {
 				session.setAttribute("logged", email);

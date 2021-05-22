@@ -1,23 +1,21 @@
-let billboard = document.getElementById("billb");
-let box = document.getElementById("mainbox");
-let size = window.outerWidth;
-
-window.addEventListener("resize", function() {
-     
-    if(outerWidth <= screen.width/100*55){
-        billboard.style.display = "none";
-        box.style.width = 100 + "%";
-    }
-    else{
-        billboard.style.display = "initial";
-        box.style.width = 50 + "%";
-    }
-});
-
 function billboardResizeOnLoad(){
+    let size = window.outerWidth;
 
-    if(outerWidth <= screen.width/100*55){
-        billboard.style.display = "none";
-        box.style.width = 100 + "%";
+    if(size <= screen.width/100*55){
+        $("#billb").css("display","none");
+        $("#mainbox").css("width","100%");
     }
+    window.addEventListener("resize", function() {
+
+        let size = window.outerWidth;
+     
+        if(size <= screen.width/100*55){
+            $("#billb").css("display","none");
+            $("#mainbox").css("width","100%");
+        }
+        else{
+            $("#billb").css("display","initial");
+            $("#mainbox").css("width","50%");
+        }
+    });
 }

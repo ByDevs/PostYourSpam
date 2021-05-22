@@ -15,8 +15,8 @@ import Servlet.Servlet_Base;
 
 
 /**
- * Servlet that handle the login of an user
- * @author AlessioTranzocchi
+ * Servlet that handle the logout of an user
+ * @author Alessio Tranzocchi & Matteo Catalano
  *
  */
 @WebServlet(name="LogoutServlet", urlPatterns="/logout.jsp")
@@ -28,14 +28,12 @@ public class LogoutServlet extends Servlet_Base {
 		//Open the session
 		HttpSession session = request.getSession();
 		
+		//If is logged, perform a logout
 		if(session.getAttribute("logged") != null) {
 			
 			session.setAttribute("logged",null);
 			response.sendRedirect("home.html");
 		
 		}
-		
-		
 	}
-
 }

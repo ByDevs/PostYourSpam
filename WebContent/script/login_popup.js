@@ -17,36 +17,23 @@ function togglePopup(){
 }
 
 function disableScroll() {
-    document.body.style.overflow = 'hidden';
-    //document.querySelector('html').scrollTop = window.scrollY;
+    $('body').css("overflow","hidden");
 }
 
 function enableScroll() {
-    document.body.style.overflow = null;
+    $('body').css("overflow","initial");
 }
 
 
-
-
-
-
-
-
-
-
-//#####LOGIN REQUEST#####
+//#####LOGIN-LOGOUT HANDLERS#####
 function pressLogin() {
 
     var email = document.getElementById("login-email").value;
     var password = document.getElementById("login-password").value;
-
-    console.log(email + " " + password);
-
     var params = new reqParams("");
     params.addParams("email",email).addParams("password",password);
+    loginRequest("login.jsp", params.getParams);
 
-    console.log(loginRequest("login.jsp", params.getParams));
-    togglePopup();
 }
 
 function loginRequest(url , params) {
@@ -55,6 +42,7 @@ function loginRequest(url , params) {
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200) {
             if(http.responseText == "true"){
+                togglePopup();
                 showUserStats();
             }
             else if(http.responseText == "false"){
