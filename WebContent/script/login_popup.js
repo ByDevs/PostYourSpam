@@ -51,6 +51,7 @@ function loginRequest(url , params) {
         }
     }
     http.send(params);
+    console.log(http.url);
 }
 
 function logout() {

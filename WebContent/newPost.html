@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/stylesheet_progetto.css">
+    <link rel="stylesheet" href="css/stylesheet_progetto_login_popup.css">
+    <link rel="stylesheet" href="css/stylesheet_progetto_newPost.css">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,100&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript" src="script/serverRequests.js"></script>
+    <script type="text/javascript" src="script/newPost.js"></script>
+    <script type="text/javascript" src="script/login_popup.js"></script>
+    <script type="text/javascript" src="script/load_body.js"></script>
+</head>
+<body onload="loadBody();">
+    <div class="blur_container" id="blur">
+
+        <section style="margin-top : -40px">
+            <div style="display: flex; justify-content: space-between;">
+                <div style="float: left;"><h1 class="title_box">Crea nuovo SPAM</h1></div>
+                <div style="float: right;" id="normal_button"><a style="border-radius: 20px;" class="btn btn-primary" href="posts.html">Indietro</a></div>
+            </div>
+            <div class="post_box">
+                <div class="container">
+                    
+                    
+                    <form onsubmit="pressNewPost(); return false;">
+                        <div" class="row align-items-start">
+                            <div id="first_column" class="col-xs">
+                                <img src="images/user_icon.png" width="40" height="40">
+                            </div>
+                            
+                            <div class="col">
+
+                                <div class="form-group">
+                                    <label for="titolo">Titolo</label>
+                                    <input type="text" class="form-control" id="titolo" placeholder="Inserisci il Titolo" required>
+                                </div>
+
+                                <hr>
+                                <div class="form-group">
+                                    <label for="sottotitolo">Sottotitolo</label>
+                                    <input type="text" class="form-control" id="sottotitolo" placeholder="Inserisci il Titolo" required>
+                                </div>
+                                
+                                <hr class="rounded">
+                                
+                                <div class="form-group">
+                                    <label for="bodyPost">Body</label>
+                                    <textarea class="form-control" id="bodyPost" rows="12" placeholder="Inserisci qui il tuo spam" required></textarea>
+                                </div>
+
+                                <hr class="rounded">
+                                
+                                <div class="form-row">
+                                    <div class="col-9">
+                                      <label for="link">Reward Link</label>
+                                      <input type="url" class="form-control" placeholder="Link..." id="link" required>
+                                    </div>
+                                    <div class="col">
+                                      <label for="reward">N° SPAM</label>
+                                      <input type="number" class="form-control" id="reward">
+                                    </div>
+                                </div>
+
+                                <hr class="rounded">
+                                <div class="submit_wrapper">
+                                    <button style="margin-top: 20px" type="submit" class="myButton">SPAMMA</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                
+                
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-basic"></div>
+    </div>
+
+    <div id="popup"></div>
+</body>
+</html>

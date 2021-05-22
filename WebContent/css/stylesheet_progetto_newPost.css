@@ -1,0 +1,118 @@
+.post_box {
+    background-color: #e7e7e7;
+    border-radius: 20px;
+	width: 100%;
+	height: fit-content;
+	padding-top: 30px;
+	padding-bottom: 30px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.container{
+    max-width: 100%;
+}
+
+.title_text {
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(15px + 1vw );
+    font-weight: bold;
+    margin-bottom: 0.5%;
+}
+
+.title_box {
+    color: #e7e7e7;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(15px + 1.5vw );
+}
+
+.date_post {
+    white-space: nowrap;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(10px + 0.5vw );
+    font-weight: lighter;
+    margin-right: 10px;
+}
+
+.nickname_post {
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(10px + 0.5vw );
+    margin-right: 10px;
+}
+
+.subtitle_post{
+    background-color: #d2d2d2;
+    border-radius: 8px;
+    height: fit-content;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(12px + 0.2vw );
+    padding-left: 1%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+
+}
+
+.text_box {
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(12px + 0.2vw );
+}
+
+.link_box {
+    background-color: #d2d2d2;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    padding: 5px 50px 5px 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(12px + 0.2vw );
+    transition: 0.5s;
+}
+
+.link_box:hover {
+    background-color: grey;
+
+}
+
+.value_post {
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(10px + 0.2vw );
+    margin-left: 3px;
+}
+
+.lmarg {
+    margin-left: 8px;
+}
+
+
+/* Submit button #363749 */
+
+.myButton {
+	box-shadow: 10px 17px 14px -7px #4f4f4f;
+	background:linear-gradient(to bottom, #363749 5%, #a8a8a8 100%);
+	background-color:#363749;
+	border-radius:12px;
+	border:1px solid #6e6e6e;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:-1px 2px 0px #000000;
+    transition: 0.5s;
+    float:right;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #a8a8a8 5%, #363749 100%);
+	background-color:#a8a8a8;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+  
+
+  
