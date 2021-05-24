@@ -9,7 +9,7 @@ function loadPost(){
         postID = Number((window.location.hash).substring(1));
     }
 	else{
-		alert("some error occurred");
+		alert("Si è verificato un errore");
 		return;
 	}
 
