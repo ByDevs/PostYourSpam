@@ -1,0 +1,107 @@
+.page_box {
+    background-color: #e7e7e7;
+    border-radius: 8px;
+}
+
+
+.title_box{
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(20px + 1vw );
+    font-weight: bold;
+    color: #e7e7e7;
+}
+
+.form_box {
+    padding: 2%;
+    margin: 5% 2% 3% 5%;
+    background-color: #cacaca;
+    border-radius: 5px;
+}
+
+.grid-divider {
+    position: relative;
+    padding: 0;
+}
+.grid-divider>[class*='col-'] {
+    position: static;
+}
+.grid-divider>[class*='col-']:before {
+    content: "";
+    border-left: 1px solid #dbdbdb;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+}
+.col-padding {
+    padding: 0 15px;
+}
+
+.subtitle_wallet {
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: 5%;
+    
+}
+
+#balance_spam {
+    text-align: center;
+    margin-top: 15%;
+    display: none;
+}
+
+#deposit_button{
+    margin-top: 15%;
+    width: 120px;
+}
+
+#withdraw_button{
+    margin-top: 5%;
+    width: 120px;
+}
+
+#deposit_popup{
+    position: fixed;
+    top: -100px;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 30%;
+    min-width: 400px;
+    height: fit-content;
+    padding: 25px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background: #e7e7e7;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+
+#withdraw_popup{
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    min-width: 400px;
+    height: fit-content;
+    padding: 25px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background: #e7e7e7;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+
+#deposit_popup.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#withdraw_popup.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
