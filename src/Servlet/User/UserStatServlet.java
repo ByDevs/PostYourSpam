@@ -54,7 +54,6 @@ public class UserStatServlet extends Servlet_Base {
 				else {
 					//If not the data are incorrect , set the error and redirect
 					response.getWriter().write("false");
-					rs.close();
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();

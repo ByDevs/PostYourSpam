@@ -18,8 +18,8 @@ import Servlet.Servlet_Base;
  * @author AlessioTranzocchi
  *
  */
-@WebServlet(name="NewPostServlet", urlPatterns="/newpost.jsp")
-public class newPost extends Servlet_Base {
+@WebServlet(name="newPostServlet", urlPatterns="/newpost.jsp")
+public class newPostServlet extends Servlet_Base {
 	private static final long serialVersionUID = 8484501789787L;
 	
 

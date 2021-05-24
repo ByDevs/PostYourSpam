@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <head>
-    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
     <link rel="stylesheet" href="css/stylesheet_progetto.css">
     <link rel="stylesheet" href="css/stylesheet_progetto_login_popup.css">
     <link rel="stylesheet" href="css/stylesheet_progetto_post.css">
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,100&display=swap" rel="stylesheet">
@@ -17,11 +19,16 @@
     <script type="text/javascript" src="script/login_popup.js"></script>
     <script type="text/javascript" src="script/resize_post.js"></script>
     <script type="text/javascript" src="script/load_body.js"></script>
+    <script type="text/javascript" src="script/getPost.js"></script>
 </head>
-<body onload="loadBody();">
+<body onload="loadBody(); loadPost();">
     <div class="blur_container" id="blur">
 
         <section>
+            <div style="display: flex; justify-content: space-between;">
+                <div style="float: left;"><h1 class="title_box" id="id_post"></h1></div>
+                <div style="float: right;" id="normal_button"><a style="border-radius: 20px; margin-bottom: 10px;" class="btn btn-primary" href="posts.html">Indietro</a></div>
+            </div>
             <div class="post_box">
                 <div class="container">
                     <div" class="row align-items-start">
@@ -29,27 +36,37 @@
                             <img src="images/user_icon.png" width="40" height="40">
                         </div>
                         <div class="col">
-                            <p class="title_text">Titolo Mega Stupendo</p>
+                            
+                            <p class="title_text" id="titolo_post"></p>
+                            
                             <div style="display: inline-block;">
-                                <span class="date_post"> 22/11/63 12:00</span> 
-                                <span class="nickname_post">DrTranzoc</span>
+                                
+                                <span class="date_post" id="data_post"> </span> 
+                                <span class="nickname_post" id="user_post"></span>
+                                
                                 <span id="resize_value_post"></span>
                             </div>
                             <hr>
-                            <div class="subtitle_post">
-                                culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo culo 
+                            <div class="subtitle_post" id="sintesi_post">
+                                
                             </div>
                             <hr>
                             <div style="margin-top: 3%; min-height: 55vh;">
-                                <p class="text_box">testo culo ciao cagnolino testo culo ciao cagnolino testo culol testo culo ciao cagnolino testo culo ciao cagnolino testo culol  testo culo ciao cagnolino testo culo ciao cagnolino testo culol  testo culo ciao cagnolino testo culo ciao cagnolino testo culol  testo culo ciao cagnolino testo culo ciao cagnolino testo culol  testo culo ciao cagnolino testo culo ciao cagnolino testo culol  testo culo ciao cagnolino testo culo ciao cagnolino testo culol   </p>
+                                
+                                <p class="text_box" id="body_post"></p>
+                            
                             </div>
                             <div style="width: 100%; text-align: center;">
-                                <button class="link_box" onclick="location.href='https://google.com';"> Raccogli i tuoi SPAM</button>
+                                
+                                <button class="link_box" id="link_post"></button>
+                            
                             </div>
                         </div>
                         <div id="third_column" class="col-xs">
-                            <i class="bi bi-eye"></i> <span class="value_post">250</span>
-                            <i class="bi bi-currency-exchange lmarg"></i> <span class="value_post">5</span>
+                            
+                            <i class="bi bi-eye"></i> <span class="value_post" id="views_post"></span>
+                            <i class="bi bi-currency-exchange lmarg"></i> <span class="value_post" id="reward_post"></span>
+                        
                         </div>
                     </div>
                 </div>

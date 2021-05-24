@@ -23,6 +23,12 @@
     margin-bottom: 0.5%;
 }
 
+.title_box {
+    color: #e7e7e7;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(15px + 1.5vw);
+}
+
 .date_post {
     white-space: nowrap;
     font-family: 'Roboto', sans-serif;
