@@ -29,9 +29,15 @@ h1{
     margin-left: 3%;
 }
 
+.countdown {
 
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(45px + 2vw );
+    font-weight: bolder;
+    color:#e7e7e7;
+    margin-left: 3%;
 
-
+}
 
 
 .blur_container#blur.active{

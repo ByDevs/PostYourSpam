@@ -44,7 +44,6 @@ function loginRequest(url , params) {
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200) {
             if(http.responseText == "true"){
-                logged = true;
                 togglePopup();
                 showUserStats();
             }
@@ -54,7 +53,6 @@ function loginRequest(url , params) {
         }
     }
     http.send(params);
-    console.log(http.url);
 }
 
 function logout() {
@@ -69,7 +67,6 @@ function logout() {
     http.send(null);
 }
 
-
 /*Check if the user is logged in the session, and updates the navbar, if not reload the original buttons*/
 function showUserStats(){
 
@@ -77,7 +74,10 @@ function showUserStats(){
     
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200) {
+            
             if(http.responseText == "notLogged"){
+                logged = false;
+                console.log(isLogged());
                 $('#mini_user_stats').empty();
 
                 var original_div = 
@@ -88,6 +88,8 @@ function showUserStats(){
             }
             else
             {
+                logged = true;
+                console.log(isLogged());
                 res = JSON.parse(http.responseText);
 
                 username = res["username"];

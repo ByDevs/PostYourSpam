@@ -3,9 +3,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="css/stylesheet_progetto.css">
     <link rel="stylesheet" href="css/stylesheet_progetto_daily.css">
     <link rel="stylesheet" href="css/stylesheet_progetto_login_popup.css">
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,100&display=swap" rel="stylesheet">
@@ -14,23 +16,28 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
     <script type="text/javascript" src="script/serverRequests.js"></script>
+    <script type="text/javascript" src="script/login_popup.js"></script>
     <script type="text/javascript" src="script/load_body.js"></script>
     <script type="text/javascript" src="script/answer_popup.js"></script>
-    <script type="text/javascript" src="script/login_popup.js"></script>
+    <script type="text/javascript" src="script/getFreeSpam.js"></script>
 </head>
-
-<body onload="loadBody(); showUserStats();">
+<body onload="loadBody(); showUserStats(); loadCounter();">
     <div class="blur_container" id="blur">
-
-        <div>
-            <button id="reward_button" style="margin-left: 40%; margin-top: 2%" class="btn btn-primary" onclick="toggleAnswerPopup()">Ottieni premio</button>
-        </div>
-
         <section>
+
+            <div style="display: flex; justify-content: space-between;">
+                <div style="float: left;width: 100%">
+                    <h2 class="countdown" id="countdown_container"></h2>
+                </div>
+                <div style="float: right;" id="normal_button">
+                    <a style="border-radius: 10px; margin-bottom: 10px; font-weight: bolder;padding: calc(14px + 1vw);" onclick="toggleAnswerPopup();" class="btn btn-primary" id="claim_btn">CLAIM DAILY</a>
+                </div>
+            </div>
+            
             <div class="page_box">
                 <div>
                     <h1>Che cosa e' il "daily rewards"?</h2>
-                    <p class="text_box">Il daily rewards e' un opportunità che diamo ai nostri iscritti di ottenere una volta al giorno una piccola quantità di SPAM gratuitamente.</p>
+                    <p class="text_box">Il daily rewards e' un opportunità che diamo ai nostri iscritti di ottenere una volta ogni 24 ore una piccola quantità di SPAM gratuitamente.</p>
                 </div>
                 <div style="margin-top: 5%">
                     <h1>Cosa devo fare?</h2>
@@ -50,16 +57,15 @@
     </div>
 
     <div id="popup"> </div>
-
     <div id="question_popup">
         <form action="">
             <div class="form-group">
-                <label>Domanda</label>
+                <label id="captcha_question">Domanda</label>
                 <input type="text" class="form-control" id="answer_daily" aria-describedby="emailHelp" required>
             </div>
             <div style="float: right">
-                <a class="btn btn-primary" href="#" onclick="toggleAnswerPopup()">Annulla</a>
-                <button type="submit" class="btn btn-primary" onclick="">Conferma</button>
+                <button class="btn btn-primary" onclick="toggleAnswerPopup(); return false;">Annulla</button>
+                <button type="submit" class="btn btn-primary" onclick="claimReward(); return false;">Conferma</button>
             </div>         
         </form>
     </div>

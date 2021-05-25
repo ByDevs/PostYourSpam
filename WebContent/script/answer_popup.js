@@ -1,6 +1,4 @@
 function toggleAnswerPopup(){
-    const reward_button = document.getElementById("reward_button");
-    reward_button.disabled = true;
     var blur = document.getElementById('blur');
     blur.classList.toggle('active');
     var popup = document.getElementById('question_popup');
@@ -14,7 +12,6 @@ function toggleAnswerPopup(){
     else {
         top_value = "-100px";
         enableScroll();
-        reward_button.disabled = false;
     }
     $("#question_popup").animate({top: top_value}, 200);
 }

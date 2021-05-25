@@ -29,7 +29,6 @@ function loadPost(){
             //Check for generic error
             else if(http.responseText == "2"){
                 alert("Si è verificato un errore col server");
-                return;
             }
             else{
                 
@@ -68,7 +67,7 @@ function getReward(){
 
 
     /* TRY MAKE A TRANSACTION */
-    if(isLogged)
+    if(isLogged())
     {
         let postid = "";
         postid = document.getElementById("id_post").innerText;

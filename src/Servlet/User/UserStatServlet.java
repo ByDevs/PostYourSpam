@@ -31,7 +31,7 @@ public class UserStatServlet extends Servlet_Base {
 		HttpSession session = request.getSession();
 		
 		String email = (String) session.getAttribute("logged");
-		
+
 		if(email != null) {
 			String usernameQ = "SELECT username FROM utente u WHERE u.email = \""+email+"\"";
 			String datas = "SELECT * FROM balance b WHERE b.user_id = ("+usernameQ+")";
