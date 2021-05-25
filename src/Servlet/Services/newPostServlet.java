@@ -14,8 +14,8 @@ import DatabaseManager.DBManager;
 import Servlet.Servlet_Base;
 
 /**
- * Servlet that handle the login of an user
- * @author AlessioTranzocchi
+ * Servlet that handle the creation of a new post by a logged user
+ * @author Alessio Tranzocchi & Matteo Catalano
  *
  */
 @WebServlet(name="newPostServlet", urlPatterns="/newpost.jsp")

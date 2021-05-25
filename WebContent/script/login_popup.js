@@ -1,3 +1,5 @@
+var logged = false;
+
 function togglePopup(){
     var blur = document.getElementById('blur');
     blur.classList.toggle('active');
@@ -42,6 +44,7 @@ function loginRequest(url , params) {
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200) {
             if(http.responseText == "true"){
+                logged = true;
                 togglePopup();
                 showUserStats();
             }
@@ -59,6 +62,7 @@ function logout() {
     
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200) {
+            logged = false;
             showUserStats();
         }
     }
@@ -112,4 +116,8 @@ function showUserStats(){
         }
     }
     http.send(null);
+}
+
+function isLogged(){
+    return logged;
 }

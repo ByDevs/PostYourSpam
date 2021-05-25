@@ -17,8 +17,8 @@ import DatabaseManager.JSONBuilder;
 import Servlet.Servlet_Base;
 
 /**
- * Servlet that handle the login of an user
- * @author AlessioTranzocchi
+ * Servlet that handle the request of all posts by a user
+ * @author Alessio Tranzocchi & Matteo Catalano
  *
  */
 @WebServlet(name="getPostsServlet", urlPatterns="/getposts.jsp")

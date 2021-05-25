@@ -21,7 +21,7 @@
     <script type="text/javascript" src="script/newPost.js"></script>
 
 </head>
-<body onload="loadBody();">
+<body onload="loadBody(); showUserStats();">
     <div class="blur_container" id="blur">
 
         <section>
@@ -40,27 +40,21 @@
                             </div>
                             
                             <div class="col">
-
                                 <div class="form-group">
                                     <label for="titolo">Titolo</label>
                                     <input type="text" class="form-control" id="titolo" placeholder="Inserisci il Titolo" required>
                                 </div>
-
                                 <hr>
                                 <div class="form-group">
                                     <label for="sottotitolo">Sottotitolo</label>
                                     <input type="text" class="form-control" id="sottotitolo" placeholder="Inserisci il Titolo" required>
                                 </div>
-                                
                                 <hr class="rounded">
-                                
                                 <div class="form-group">
                                     <label for="bodyPost">Body</label>
                                     <textarea class="form-control" id="bodyPost" rows="12" placeholder="Inserisci qui il tuo spam" required></textarea>
                                 </div>
-
                                 <hr class="rounded">
-                                
                                 <div class="form-row">
                                     <div class="col-9">
                                       <label for="link">Reward Link</label>
@@ -71,7 +65,6 @@
                                       <input type="number" class="form-control" id="reward">
                                     </div>
                                 </div>
-
                                 <hr class="rounded">
                                 <div class="submit_wrapper">
                                     <button style="margin-top: 20px" type="submit" class="myButton">SPAMMA</button>
@@ -79,15 +72,11 @@
                             </div>
                         </div>
                     </form>
-                
-                
                 </div>
             </div>
         </section>
-
         <div class="footer-basic"></div>
     </div>
-
     <div id="popup"></div>
 </body>
 </html>

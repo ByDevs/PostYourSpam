@@ -17,7 +17,7 @@ import Servlet.Servlet_Base;
 
 
 /**
- * Servlet that check if the user il logged
+ * Servlet that check if the user il logged, and returns the username+balance
  * @author  Alessio Tranzocchi & Matteo Catalano
  *
  */

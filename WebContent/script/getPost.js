@@ -57,9 +57,54 @@ function loadPost(){
                 $("#views_post").html(views);
                 $("#data_post").html(data);
                 $("#link_post").html(link);
+            
             }
-
         }
     }
     http.send(params.getParams);
+}
+
+function getReward(){
+
+
+    /* TRY MAKE A TRANSACTION */
+    if(isLogged)
+    {
+        let postid = "";
+        postid = document.getElementById("id_post").innerText;
+        var params = new reqParams("");
+        params.addParams("post_id",postid.substring(6));
+        rewardRequest("getreward.jsp",params.getParams);
+    }
+    else
+        alert("Devi prima effettuare il login!");
+        
+}
+
+function rewardRequest(url,params){
+
+    var http = sendRequest(url);
+    
+    http.onreadystatechange = function() {
+        if(http.readyState == 4 && http.status == 200) {
+
+            if(http.responseText == "1"){
+                alert("Il creatore non ha abbastanza saldo");
+            }
+            else if(http.responseText == "2"){
+                alert("Si è verificato un errore col server");
+            }
+            else if(http.responseText == "3"){
+                alert("ERRORE: Prova a rieffettuare l'accesso");
+            }
+            else if(http.responseText == "4"){
+                alert("Hai già riscosso la ricompensa");
+            }
+            else{
+                window.open(document.getElementById("link_post").innerText);
+                showUserStats();
+            }
+        }
+    }
+    http.send(params);
 }

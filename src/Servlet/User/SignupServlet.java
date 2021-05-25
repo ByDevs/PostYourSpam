@@ -16,8 +16,8 @@ import Servlet.Servlet_Base;
 
 
 /**
- * Servlet that handle the login of an user
- * @author AlessioTranzocchi
+ * Servlet that handle the signup of an user
+ * @author Alessio Tranzocchi & Matteo Catalano
  *
  */
 @WebServlet(name="SignupServlet", urlPatterns="/signup.jsp")

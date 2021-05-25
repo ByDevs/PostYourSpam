@@ -2,9 +2,12 @@ package DatabaseManager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class execute DML and DQL query to the local server "DBNAME" in order to save / retrieve user or save / check synonyms
@@ -60,5 +63,46 @@ public class DBManager {
 	}
 	
 	
+	public static Connection getConnection() {
+		Connection conn = null;
+		try {
+			Class.forName("org.sqlite.JDBC");
+			conn = DriverManager.getConnection("jdbc:sqlite:"+DBNAME);
+			
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return conn;
+	}
 	
+	
+	/**
+	 * @param querys the list of querys to execute in the transaction
+	 * @return if the transaction executed succesfully
+	 */
+	public static boolean performTransaction(String... querys) {
+		Connection con = DBManager.getConnection();
+		try {
+			con.setAutoCommit(false);
+			List<PreparedStatement> statements = new ArrayList<>();
+			
+			for(String x:querys)
+				statements.add(con.prepareStatement(x));
+			
+			for(PreparedStatement st:statements)
+				st.executeUpdate();
+		
+			con.commit();
+			return true;
+		} catch (SQLException e) {
+			try {
+				con.rollback();
+				return false;
+			}catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				return false;
+			}
+		}
+	}
 }

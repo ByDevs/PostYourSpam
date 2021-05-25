@@ -15,7 +15,7 @@ import Servlet.Servlet_Base;
 
 /**
  * Servlet that handle the login of an user
- * @author AlessioTranzocchi
+ * @author Alessio Tranzocchi & Matteo Catalano
  *
  */
 @WebServlet(name="LoginServlet", urlPatterns="/login.jsp")

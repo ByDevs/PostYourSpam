@@ -17,7 +17,7 @@ import DatabaseManager.JSONBuilder;
 import Servlet.Servlet_Base;
 
 /**
- * Servlet that handle the login of an user
+ * Servlet that handle the request of a post by a user
  * @author Alessio Tranzocchi & Matteo Catalano
  *
  */
@@ -33,9 +33,7 @@ public class getPostServlet extends Servlet_Base {
 			
 			String id = request.getParameter("post_id");
 			String getPostQuery = "SELECT * FROM post p WHERE p.id = \""+id+"\"";
-			
-			System.out.println(getPostQuery);
-			
+
 			ResultSet postsRes = DBManager.exDQLQuery(getPostQuery);
 
 			if(postsRes !=  null && postsRes.next()) {
