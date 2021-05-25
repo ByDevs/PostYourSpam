@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/stylesheet_progetto.css">
+    <link rel="stylesheet" href="css/stylesheet_progetto_login_popup.css"> 
+    <link rel="stylesheet" href="css/stylesheet_progetto_info.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,100&display=swap" rel="stylesheet">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script/load_body.js"></script>
+    <script type="text/javascript" src="script/serverRequests.js"></script>
+    <script type="text/javascript" src="script/login_popup.js"></script>
+    <script type="text/javascript" src="script/resize_info.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+</head>
+<body onload="loadBody(); showUserStats(); resizeInfo();">
+    <div class="blur_container" id="blur">
+        <section>
+            <h1 style="font-family: 'Roboto', sans-serif; font-size: calc(20px + 1vw ); font-weight: bold;color: #e7e7e7;">Info</h1>
+            <div class="page_box">
+                <div style="text-align: center;">
+                    <p class="text_box">Questo progetto blablabla..... proprio perchè il blabla non è stato accettato dalla comunità bla bla culo culo culo culo culo culo culo culo culo</p>
+                </div>
+
+                <hr style="margin-top: 2%; margin-bottom: 2%;">
+
+                <div class="card">
+                    <div class="card-horizontal">
+                        <div class="img-square-wrapper">
+                            <img class="" src="images/spam-logo.png" width="100" height="100" alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Come è nata l'idea della moneta SPAM?</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr style="margin-top:2%; margin-bottom: 2%;">
+
+                <div class="row mb-2">
+                    <div class="col">
+                        <div class="card">
+                            <div id="1" class="card-horizontal">
+                                <div class="img-square-wrapper">
+                                    <img class="" src="images/alessio2.jpg" width="300" height="350" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Alessio Tranzocchi</h4>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div>
+                                        <i class="bi bi-instagram"></i><a style="margin-left: 10px" class="card-text" href="">Instagram</a>
+                                    </div>
+                                    <div>
+                                        <i class="bi bi-linkedin"></i><a style="margin-left: 10px" class="card-text" href="">Linkedin</a>
+                                    </div>                          
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <div id="2" class="card-horizontal">
+                                <div class="img-square-wrapper">
+                                    <img class="" src="images/matteo2.jpg" width="330" height="350" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Matteo Catalano</h4>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div>
+                                        <i class="bi bi-instagram"></i><a style="margin-left: 10px" class="card-text" href="">Instagram</a>
+                                    </div>
+                                    <div>
+                                        <i class="bi bi-linkedin"></i><a style="margin-left: 10px" class="card-text" href="">Linkedin</a>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr style="margin-top:2%; margin-bottom: 2%;">
+
+                <div style="background-color: white; border-radius: 7px; padding: 2%;">
+                    <h1>News</h1>
+                    <hr style="margin-top: 1%; margin-bottom: 3%;">
+                    <h3>Progetto "PostYourSpam"</h3>
+                    <p style="color: grey;">25/05/2021</p>
+                    <hr style="margin-top: 1%; margin-bottom: 1%;">
+                    <p>Il progetto "PostYourSpam" nasce come progetto universitario....</p>
+                </div>
+        </section>
+        
+        <div class="footer-basic"></div>
+    </div>
+
+    <div id="popup"></div>
+</body>
+</html>

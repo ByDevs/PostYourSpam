@@ -105,3 +105,41 @@
     opacity: 1;
     transition: 0.5s;
 }
+
+.header_box {
+    background-color: #363749;
+    color: #e7e7e7;
+    border-radius: 20px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.header_text{
+    text-align: center;
+    font-weight: bold;
+}
+
+.center_text{
+    margin: auto;
+    text-align: center;
+}
+
+.table_text {
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(7px + 0.5vw);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.log_box{
+    
+    background-color: #e7e7e7;
+    border-radius: 8px;
+    padding: 30px 2% 30px 2%;
+}
+
+.post_box {
+    background-color: #d2d2d2;
+    border-radius: 10px;
+    margin-top: 2%;
+}

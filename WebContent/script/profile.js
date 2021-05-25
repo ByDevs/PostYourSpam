@@ -13,21 +13,26 @@ function onCheckedSwitch(){
         $("#profile_box").css("display","none");
         $("#wallet_box").css("display","block");
         $("#wallet_box").removeClass("col-md-4");
+
+        $(".log_box").css("display", "block");
     }
     else{
         $("#wallet_box").addClass("col-md-4");
         $("#wallet_box").css("display","none");
         $("#profile_box").css("display","block");
+
+        $(".log_box").css("display", "none");
     }
 }
 
 function resizeWindow(){
-    var percentage = 60;
+    var percentage = 90;
     if (window.innerWidth < ((screen.width * percentage) / 100)) {
         $("#switch_button_box").css("display", "block");
         $("#wallet_box").css("display","none");
         $("#profile_box").removeClass("col-md-8");
         onCheckedSwitch();
+        $(".col-5").css("display", "none");
     }
 
     else{
@@ -35,6 +40,8 @@ function resizeWindow(){
         $("#profile_box").addClass("col-md-8");
         $("#switch_button_box").css("display", "none");
         $("#wallet_box").css("display","block");
+        $(".log_box").css("display", "block");
+        $(".col-5").css("display", "block");
 
     }
 }
