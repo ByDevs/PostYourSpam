@@ -69,6 +69,7 @@
     font-family: 'Roboto', sans-serif;
     font-size: calc(12px + 0.2vw );
     transition: 0.5s;
+    word-break: break-all;
 }
 
 .link_box:hover {

@@ -103,7 +103,7 @@ function showUserStats(){
 	                        <img src='images/user_icon.png' width='22' height='22'>\
 	                        <a href='#' class='dropdown-toggle' style='color:#ffffff' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>" + username +"</a>\
 	                        <div style='min-width: 50px !important' class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>\
-	                            <a class='dropdown-item' href='#'>Profilo</a>\
+	                            <a class='dropdown-item' href='profile.html'>Profilo</a>\
 	                            <a class='dropdown-item' onclick='logout()' href='#'>Logout</a>\
 	                        </div>\
 	                    </div> \

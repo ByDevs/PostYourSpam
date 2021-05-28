@@ -48,43 +48,65 @@ function resizeWindow(){
 
 //funzione che inserisce i dati dell'utente nel placeholder delle textbox presenti nel form e imposta gli attributi della form withdraw
 function loadProfileData(){
-    var nickname = "DrTranzoc";
-    var address = "Via dalle palle 69";
-    var country = "Italy";
-    var email = "DrTranzoc@gmail.com";
-    var balance = 69;
-    //var password = "******";
+    var nickname;
+    var address;
+    var country;
+    var email;
+    var balance;
 
-    $(".title_box").text(nickname);
-    $("#address").attr("placeholder", address);
-    $('#country option[value="' + country + '"]').attr("selected", "selected");
-    $("#email").attr("placeholder", email);
-    //$("#password").attr("placeholder", password);
-    $("#balance_spam").attr("placeholder", balance);
+    var http = sendRequest("getprofile.jsp");
+    http.onreadystatechange = function() {
+        if(http.readyState == 4 && http.status == 200) {
+            //Initialize the page
+            //Check if there is atleast 1 posts available
+            if(http.responseText == "1"){
+                alert("Devi prima loggarti per accedere a questa sezione!");
+                location.replace("home.html");
+                return;
+            }
 
-    $("#limit_withdraw_text").text("limite max : " + balance);
-    $("#quantity").prop("max", balance);
-    $("#balance_spam").fadeIn("slow");
+            //Check for generic error
+            else if(http.responseText == "2"){
+                alert("Si è verificato un errore col server");
+                return;
+            }
+            else{
+                var response = http.responseText;
+                email = response.split("|")[0];
+                nickname = response.split("|")[1];
+                country = response.split("|")[2];
+                address = response.split("|")[3];
+                balance = response.split("|")[4];
+
+                $(".title_box").text(nickname);
+                $("#address").attr("placeholder", address);
+                $('#country option[value="' + country + '"]').attr("selected", "selected");
+                $("#email").attr("placeholder", email);
+                //$("#password").attr("placeholder", password);
+                $("#balance_spam").text(balance);
+                $("#limit_withdraw_text").text("limite max : " + balance);
+                $("#quantity").prop("max", balance);
+                $("#balance_spam").fadeIn("slow");
+            }
+        }
+    }
+    http.send(null);
 }
 
 
 //funzione chiamata quando viene premuto il tasto "modifica"
 function toggleEdit(){
     if($("#confirm").prop("disabled")){
-        $("#edit").prop("disabled", true);
         $("#confirm").prop("disabled", false);
-        $("#confirm_password").prop("disabled", false);
+        $("#new_password").prop("disabled", false);
         $("#password").prop("disabled", false);
-        $("#email").prop("disabled", false);
         $("#country").prop("disabled", false);
         $("#address").prop("disabled", false);
     }
     else{
-        $("#edit").prop("disabled", false);
         $("#confirm").prop("disabled", true);
-        $("#confirm_password").prop("disabled", true);
+        $("#new_password").prop("disabled", true);
         $("#password").prop("disabled", true);
-        $("#email").prop("disabled", true);
         $("#country").prop("disabled", true);
         $("#address").prop("disabled", true);
     }
@@ -132,20 +154,45 @@ function enableScroll() {
 
 //funzione chiamata dal submit del popup deposito
 function confirmDeposit(){
-    //cose
     toggleDepositPopup();
 }
 
 //funzione chiamata dal submit del popip withdraw
 function confirmWithdraw(){
-    //cose
-    toggleWithdrawPopup();
-}
+    var wallet;
+    var quantity;
 
-//funzione chiamata alla pressione del tasto "submit"
-function changeData(){
-    //cose
-    toggleEdit();
+    wallet = $("#wallet_address").val();
+    quantity = $("#quantity").val();
+    console.log(wallet + ", " + quantity);
+
+    var params = new reqParams("");
+    params.addParams("wallets", wallet)
+          .addParams("quantity", quantity);
+
+    var http = sendRequest("withdraw.jsp");
+    http.onreadystatechange = function() {
+        if(http.readyState == 4 && http.status == 200) {
+            //Initialize the page
+            if(http.responseText == "1"){
+                alert("Devi prima loggarti per accedere a questa sezione!");
+                location.replace("home.html");
+                return;
+            }
+
+            //Check for generic error
+            else if(http.responseText == "2"){
+                alert("Si è verificato un errore col server");
+                return;
+            }
+            else{
+                console.log("withdraw complete");
+            }
+        }
+    }
+    http.send(params.getParams);
+    toggleWithdrawPopup();
+    loadLogs();
 }
 
 //funzione chiamata al caricamento della pagina

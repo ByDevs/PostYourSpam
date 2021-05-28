@@ -17,7 +17,7 @@ var navbar_html = '\
                     <button onclick="location.href=' + "'newPost.html'" + '"class="navButtons nav-item">CREA SPAM</button> \
                 </li> \
                 <li class="nav-item active"> \
-                    <button class="navButtons nav-item">INFO</button> \
+                    <button onclick="location.href=' + "'info.html'" + '"class="navButtons nav-item">INFO</button> \
                 </li> \
                 <li class="nav-item active"> \
                     <button onclick="location.href=' + "'daily.html'" + '" class="navButtons nav-item">DAILY REWARDS</button> \

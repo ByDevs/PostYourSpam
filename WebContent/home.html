@@ -16,9 +16,10 @@
     <script type="text/javascript" src="script/serverRequests.js"></script>
     <script type="text/javascript" src="script/load_body.js"></script>
     <script type="text/javascript" src="script/login_popup.js"></script>
+    <script type="text/javascript" src="script/homeStats.js"></script>
     <script type="text/javascript" src="script/parallax_eff.js"></script>
 </head>
-<body onload="loadBody(); showUserStats(); parallaxInit();">
+<body onload="loadBody(); loadHomeStats(); showUserStats(); parallaxInit();">
     <div class="blur_container" id="blur">
 
         <div class="parallax-container" id="px-container">
@@ -36,7 +37,7 @@
                 <div class="counter_one">
                     <p class="counter_text"> Si sono registrati</p>
                     <div class="counter_data_box">
-                        <p style="margin: auto; font-size: calc(65px + 1vw); color:#000000">10000</p>
+                        <p id="users_number" style="margin: auto; font-size: calc(65px + 1vw); color:#000000">10000</p>
                     </div>
                     <p style="text-align: right;" class="counter_text">utenti</p>
                 </div>
@@ -101,7 +102,7 @@
                 <div class="counter_two">
                     <p class="counter_text"> Sono stati creati</p>
                     <div class="counter_data_box">
-                        <p style="margin: auto; font-size: calc(65px + 1vw); color:#000000">10000</p>
+                        <p id="posts_number" style="margin: auto; font-size: calc(65px + 1vw); color:#000000">10000</p>
                     </div>
                     <p style="text-align: right;" class="counter_text">post</p>
                 </div>
@@ -164,7 +165,7 @@
                 <div class="counter_one">
                     <p class="counter_text"> I nostri utenti hanno guadagnato</p>
                     <div class="counter_data_box">
-                        <p style="margin: auto; font-size: calc(65px + 1vw); color:#000000">10000</p>
+                        <p id="balance_sum" style="margin: auto; font-size: calc(65px + 1vw); color:#000000">10000</p>
                     </div>
                     <p style="text-align: right;" class="counter_text">SPAM</p>
                 </div>

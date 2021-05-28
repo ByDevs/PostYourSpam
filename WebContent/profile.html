@@ -12,15 +12,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="script/load_body.js"></script>
     <script type="text/javascript" src="script/serverRequests.js"></script>
+    <script type="text/javascript" src="script/load_body.js"></script>
     <script type="text/javascript" src="script/login_popup.js"></script>
     <script type="text/javascript" src="script/profile.js"></script>
+    <script type="text/javascript" src="script/editProfile.js"></script>
+    <script type="text/javascript" src="script/render_logs.js"></script>
 
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 </head>
-<body onload="loadBody(); showUserStats(); loadProfile();">
+<body onload="loadBody(); loadLogs(); loadProfile(); showUserStats();">
     <div class="blur_container" id="blur">
         <section>
             <div style="display: flex; justify-content: space-between;">
@@ -32,7 +34,7 @@
             <div class="page_box">
                 <div class="row grid-divider">
                     <div id="profile_box" class="col col-md-8">
-                        <form onsubmit="changeData();">
+                        <form onsubmit="changeData(); return false">
                             <div class="form_box">
                                 <div class="form-group">
                                     <label>Indirizzo</label>
@@ -285,21 +287,21 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Email address</label>
-                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="DrTranzoc@gmail.com" disabled>
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="" disabled>
                                 </div>
                                 <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control" id="password" minlength="6" disabled required>
+                                    <label>Vecchia password</label>
+                                    <input type="password" class="form-control" id="password" minlength="6" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label>Nuova password</label>
+                                    <input type="password" class="form-control" id="new_password" minlength="6" disabled>
                                     <small class="form-text text-muted">La password deve essere lunga almeno 6 caratteri</small>
-                                </div>
-                                <div class="form-group">
-                                    <label>Conferma password</label>
-                                    <input type="password" class="form-control" id="confirm_password" minlength="6" disabled required>
                                 </div>
                             </div>   
                             <div style="text-align: center; margin-bottom: 2%;">
-                                <button type="" id="edit" onclick="toggleEdit()" class="btn btn-success">Modifica</button>
+                                <button type="" id="edit" onclick="toggleEdit(); return false;" class="btn btn-success">Modifica</button>
                                 <button style="margin-left: 2%;" type="submit" class="btn btn-info" id="confirm" disabled>Conferma modifiche</button>
                             </div>
                         </form>
@@ -325,36 +327,8 @@
                         <div class="col header_text">Data</div>
                     </div>
                 </div>
-                <div class="post_box">
-                    <div class="row">
-                        <div class="col center_text table_text">
-                            11,1 SPAM
-                        </div>
-                        <div class="col-5 table_text">
-                            <div>
-                                <p>Motivazione Motivazione Motivazione Motivazione Motivazione Motivazione Motivazione Motivazione Motivazione Motivazione Motivazione Motivazione Motivazione Motivazione Motivazione </p>
-                            </div>
-                        </div>
-                        <div class="col center_text table_text">
-                            11/11/11 10:44
-                        </div>
-                    </div>
-                </div>
+                <div id="logs">
 
-                <div class="post_box">
-                    <div class="row">
-                        <div class="col center_text table_text">
-                            11.2 SPAM
-                        </div>
-                        <div class="col-5 table_text">
-                            <div>
-                                Motivazione
-                            </div>       
-                        </div>
-                        <div class="col center_text table_text">
-                            Data
-                        </div>
-                    </div>
                 </div>
                 <div style="margin-top: 5%;">
                     <nav>
@@ -381,7 +355,7 @@
             <form action="" onsubmit="confirmDeposit();">
                 <div class="form-group">
                     <label>Indirizzo Wallet</label>
-                    <input type="text" class="form-control" id="wallet_address" required>
+                    <input type="text" class="form-control" id="our_wallet_address" required>
                 </div>
                 <div class="form-group">
                     <label>Quantità</label>
@@ -398,7 +372,7 @@
     <div id="withdraw_popup" class="balance_popup">
         <h2 style="font-family: 'Roboto', sans-serif; font-size: calc(20px + 1vw ); font-weight: bold; color:#1d1d1d">Ritira</h2>
         <div>
-            <form action="" onsubmit="confirmWithdraw();">
+            <form action="" onsubmit="confirmWithdraw(); return false;">
                 <div class="form-group">
                     <label>Indirizzo Wallet</label>
                     <input type="text" class="form-control" id="wallet_address" required>
