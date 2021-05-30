@@ -26,9 +26,9 @@ public class getHomeStatsServlet extends Servlet_Base{
 	
 	private static final long serialVersionUID = 1L;
 	
-	String countUser;
-	String countPost;
-	String sumBalance;
+	String countUser = "0";
+	String countPost = "0";
+	String sumBalance = "0";
 
 	@Override
 	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,7 +46,10 @@ public class getHomeStatsServlet extends Servlet_Base{
 			countPostResult.close();
 			
 			ResultSet sumBalanceResult = DBManager.exDQLQuery(sumBalanceQuery);
-			sumBalance = sumBalanceResult.getString("sum");
+			
+			if(sumBalanceResult != null && sumBalanceResult.next() && sumBalanceResult.getString("sum") != null)
+				sumBalance = sumBalanceResult.getString("sum");
+			
 			sumBalanceResult.close();
 			
 			String stats = countUser + "|" + countPost + "|" + sumBalance;
@@ -57,5 +60,4 @@ public class getHomeStatsServlet extends Servlet_Base{
 			response.getWriter().write("2");
 		}
 	}
-
 }

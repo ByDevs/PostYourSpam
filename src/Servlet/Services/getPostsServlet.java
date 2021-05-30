@@ -61,7 +61,11 @@ public class getPostsServlet extends Servlet_Base {
 					builder.append("" + i, posts.get(i));
 				}
 				
-				response.getWriter().write(builder.build());
+				String fString = builder.build();
+				
+				System.out.println(fString);
+				
+				response.getWriter().write(fString);
 			}
 			else {
 				//No posts

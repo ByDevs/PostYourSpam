@@ -25,15 +25,11 @@ function postsRequest(url , params) {
             else{
                 var res = JSON.parse(http.responseText);
                 if(!isNaN(res["npost"])){
-                    console.log("getting posts");
                     var npost = Number(res["npost"]);
-
                     //Append all posts
 
                     for(i=0;i<npost;i++){
-                        
                         var post = res[""+ i];
-                        console.log(post);
                         posts.push(post);
                     }
                     
@@ -41,7 +37,7 @@ function postsRequest(url , params) {
                     getPage(1);
 
                     //Append page indexes element
-                    var nIndexes = Math.trunc(npost/maxPostPerPage);
+                    var nIndexes = Math.ceil(npost/maxPostPerPage);
                     console.log(nIndexes);
                     
                     let nextNeighbor = "#1";
@@ -96,8 +92,6 @@ function addPost(post){
 }
 
 function getPage(pageIndex){
-	console.log("clicked "+pageIndex);
-
     let firstPost = (pageIndex -1) * maxPostPerPage;
 
     $("#posts_container").empty();

@@ -24,8 +24,7 @@ function getLogs(){
                         logs.push(log);
                     }
                     getPage(1);
-                    var nIndexes = Math.trunc(nlogs/maxLogsPerPage);
-                    console.log(nIndexes);
+                    var nIndexes = Math.ceil(nlogs/maxLogsPerPage);
                     
                     let nextNeighbor = "#1";
                     for(x = 2; x <= nIndexes;x++){

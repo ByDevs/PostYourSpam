@@ -27,7 +27,6 @@ public class getFreeServlet extends Servlet_Base {
 
 	private static final double rewardForDaily = 0.5;
 
-
 	@Override
 	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -77,7 +76,6 @@ public class getFreeServlet extends Servlet_Base {
 								builder.append("seconds", "" + (86400 - seconds));
 								response.getWriter().write(builder.build());
 							}
-
 						}
 						else {
 							builder.append("message", "CLAIM");
@@ -99,12 +97,11 @@ public class getFreeServlet extends Servlet_Base {
 			else if(request.getParameter("req_type").equals("claim_reward")){
 
 				//Check the captcha
-
 				int answer = Integer.parseInt(request.getParameter("answer"));
 
 				if(answer == Integer.parseInt( (String) session.getAttribute("answer"))) {
+					
 					String username = "";
-
 					try {
 
 						ResultSet usrRes = DBManager.exDQLQuery(usernameQuery);
