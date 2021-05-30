@@ -46,7 +46,7 @@ function getLogs(){
 
 function addLog(log){
     let amount = log.split("|")[0];
-    let text = log.split("|")[1];
+    let text = log.split("|")[1].split("-")[0];
     let date = log.split("|")[2];
 
     let newLog = '\
