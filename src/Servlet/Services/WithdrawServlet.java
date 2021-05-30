@@ -61,7 +61,7 @@ public class WithdrawServlet extends Servlet_Base{
 						boolean successUpdate = DBManager.exDMLQuery(updateBalanceQuery);
 						//generate log
 						if(successUpdate) {
-							String newLogQuery = "INSERT INTO balance_log (balance_id,log_text,amount) VALUES ('" + username + "', 'Ritiro','-"+ quantity +"')";
+							String newLogQuery = "INSERT INTO balance_log (balance_id,log_text,amount) VALUES ('" + username + "', 'WITHDRAW','-"+ quantity +"')";
 							boolean successQuery = DBManager.exDMLQuery(newLogQuery);
 							if(!successQuery) {
 								response.getWriter().write("2");
